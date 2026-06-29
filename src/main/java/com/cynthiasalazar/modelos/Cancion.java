@@ -4,6 +4,7 @@ package com.cynthiasalazar.modelos;
 
 import java.time.LocalDate;
 
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,6 +15,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 
 @Entity
@@ -25,19 +28,24 @@ public class Cancion {
 	@Column(name="id_cancion")
 	private Long id;
 	
-	@Column(nullable = false)
+    @NotNull(message = "Este campo es obligatorio.")
+    @Size(min = 5, message = "Debe tener al menos 5 caracteres")
 	private String titulo;
 	
-	@Column(nullable = false)
+	@NotNull(message = "Este campo es obligatorio.")
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String artista;
 	
-	@Column(nullable = false)
+	@NotNull(message = "Este campo es obligatorio.")
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String album;
 
-	@Column(nullable = false)
+	@NotNull(message = "Este campo es obligatorio.")
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String genero;
 	
-	@Column(nullable = false)
+	@NotNull(message = "Este campo es obligatorio.")
+	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
 	private String idioma;
 	
 	@CreationTimestamp

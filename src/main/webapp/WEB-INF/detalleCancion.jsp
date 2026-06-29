@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Detalle Cancion</title>
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body id="detalles">
 	
@@ -32,7 +32,7 @@
         </div>
 
     </div>
-	<div id="volver">
+	<div class="volver">
 	<a href="/canciones">Volver a Lista de Canciones<span>&gt;&gt;</span></a>
 	</div>	
 		

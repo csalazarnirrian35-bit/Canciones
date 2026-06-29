@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Canciones</title>
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 	<h1>Lista de Canciones</h1>
@@ -34,6 +34,8 @@
 		</tbody>
 	</table>
 	</div>				
-						 	
+	<div class="boton1">	
+		<a href="/canciones/formulario/agregar"><button>Añadir Canción<span>&#9834;&#9834;</span></button></a>			 	
+	</div>
 </body>
 </html>
