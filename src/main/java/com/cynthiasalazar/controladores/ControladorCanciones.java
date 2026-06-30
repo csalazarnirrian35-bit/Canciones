@@ -1,5 +1,6 @@
 package com.cynthiasalazar.controladores;
 
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.cynthiasalazar.modelos.Cancion;
 import com.cynthiasalazar.servicios.ServicioCanciones;
@@ -37,7 +39,7 @@ public class ControladorCanciones {
 	
 	@GetMapping("/canciones/formulario/agregar")
 	public String formularioAgregarCancion(Model modelo) {
-		modelo.addAttribute("addCancion", new Cancion());
+		modelo.addAttribute("cancion", new Cancion());
 		return "agregarCancion.jsp";
 		
 	}
@@ -45,7 +47,7 @@ public class ControladorCanciones {
 	
 	
 	@PostMapping("/canciones/procesa/agregar")
-	public String procesarAgregarCancion(@Valid @ModelAttribute("addCancion") Cancion cancion, BindingResult validaciones) {
+	public String procesarAgregarCancion(@Valid @ModelAttribute("cancion") Cancion cancion, BindingResult validaciones) {
 		if(validaciones.hasErrors()) {
 			return "agregarCancion.jsp";
 		}
@@ -53,5 +55,27 @@ public class ControladorCanciones {
 		return "redirect:/canciones";
 		
 	}
+	
+	@GetMapping("/canciones/formulario/editar/{idCancion}")
+	public String formularioEditarCancion(@PathVariable("idCancion") Long idCancion, Model modelo) {
+		modelo.addAttribute("cancion", this.servicioCanciones.obtenerCancionPorId(idCancion));
+		return "editarCancion.jsp";
+	}
+	
+	@PutMapping("/canciones/procesa/editar/{idCancion}")
+	public String procesarEditarCancion(@Valid @ModelAttribute("cancion") Cancion cancion, BindingResult validaciones) {
+		if(validaciones.hasErrors()) {
+			return "editarCancion.jsp";
+		}
+		this.servicioCanciones.actualizaCancion(cancion);
+		return "redirect:/canciones";
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 }

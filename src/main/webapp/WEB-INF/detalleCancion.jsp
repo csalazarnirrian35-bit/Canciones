@@ -30,7 +30,7 @@
             <p>Idioma:</p>
             <h4><b>${cancion.idioma}</b></h4>
         </div>
-
+		<a href="/canciones/formulario/editar/${cancion.id}"><button>Editar Canción</button></a>
     </div>
 	<div class="volver">
 	<a href="/canciones">Volver a Lista de Canciones<span>&gt;&gt;</span></a>
