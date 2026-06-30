@@ -122,4 +122,20 @@ h1 {
   input[type="submit"] {
 	margin-top: 20px;
 	
+	
  }
+ 
+ .btnModificaciones {
+	display: flex;
+	gap: 40px;
+ }
+ 
+
+	
+
+
+	
+  
+ 
+ 
+  
