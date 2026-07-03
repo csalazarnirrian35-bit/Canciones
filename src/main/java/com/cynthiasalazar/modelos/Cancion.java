@@ -14,6 +14,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -32,9 +34,11 @@ public class Cancion {
     @Size(min = 5, message = "Debe tener al menos 5 caracteres")
 	private String titulo;
 	
-	@NotNull(message = "Este campo es obligatorio.")
-	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
-	private String artista;
+	
+    @NotNull(message = "Este campo es obligatorio.")
+	@ManyToOne
+	@JoinColumn(name="id_artista")
+	private Artista artista;
 	
 	@NotNull(message = "Este campo es obligatorio.")
 	@Size(min = 3, message = "Debe tener al menos 3 caracteres.")
@@ -74,13 +78,12 @@ public class Cancion {
 	}
 
 
-	public String getArtista() {
-		return artista;
-	}
-
-
-	public void setArtista(String artista) {
+	public void setArtista(Artista artista) {
 		this.artista = artista;
+	}
+	
+	public Artista getArtista() {
+		return artista;
 	}
 
 

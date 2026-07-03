@@ -17,7 +17,7 @@
         <p>Título</p>
         <div class="contenedor1">
             <p>Artista:</p>
-            <h4><b>${cancion.artista}</b></h4>
+            <h4><b>${cancion.artista.nombre}</b></h4>
             
             <p>Álbum:</p>
             <h4><b>${cancion.album}</b></h4>
