@@ -49,7 +49,7 @@ Navega e interactúa con el catálogo musical a través de la dirección local: 
 ## Información de Contacto
 
 * **Nombre:** Cynthia Salazar Nirrian
-* **LinkedIn Profesional:** [Visitar Perfil] www.linkedin.com/in/cynthia-salazar-nirrian-1b43a7435
+* **LinkedIn Profesional:** [www.linkedin.com/in/cynthia-salazar-nirrian-1b43a7435]
 * **Certificación:** Egresada del Bootcamp Full Stack Java - Mujeres en Tecnología (Skillnest / Banco de Chile).
 
 
